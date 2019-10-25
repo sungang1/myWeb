@@ -52,18 +52,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'views/Hello')));
 
 // console.log('w',path.join(__dirname, 'views/Hello'));
-
-
-
-
-
-
-
-
-
-
-
-
 //生产环境中去掉
 app.use(function (req, res, next) {
     console.log(req.url);
