@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
+import { Phone } from './common/isPhone';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,28 +12,19 @@ export class AppComponent {
 
 
   ngOnInit() {
-
-    this.mobileOrPc(window);
+     this.goHome();
   }
 
- constructor(public router:Router){
+  constructor(public router: Router) {
 
- }
-
-
-  mobileOrPc($window) {
-    var ua = $window['navigator']['userAgent'] || $window['navigator']['vendor'] || $window['opera'];
-    this.isPhone = (/iPhone|iPod|iPad|Silk|Android|BlackBerry|Opera Mini|IEMobile/).test(ua);
-    if(this.isPhone==true){
-     this.router.navigateByUrl('/phone')
-    }else{
-      this.router.navigateByUrl('/pc')
-    }
-     console.log(this.isPhone);
-    
   }
 
-  
+goHome(){
+   
+}
+ 
+
+
 
 
 

@@ -1,0 +1,97 @@
+<ng-container *ngIf="isPhone; then phone; else  pc"></ng-container>
+<ng-template #phone>
+    <div class="mui-content">
+        <ul class="mui-table-view mui-grid-view mui-grid-9">
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <a href="#">
+                    <i class="iconfont">&#xe617;</i>
+                    <div class="mui-media-body">音乐</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <a href="#">
+                    <i class="iconfont">&#xe63e;</i>
+                    <div class="mui-media-body">笔记</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <a href="#">
+                    <i class="iconfont">&#xe614;</i>
+                    <div class="mui-media-body">诗词</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <a href="#">
+                    <i class="iconfont">&#xe606;</i>
+                    <div class="mui-media-body">观点</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <a href="#">
+                    <i class="iconfont">&#xe611;</i>
+                    <div class="mui-media-body">文章</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <a href="#">
+                    <i class="iconfont">&#xe607;</i>
+                    <div class="mui-media-body">心理学</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <a href="#">
+                    <i class="iconfont">&#xe60f;</i>
+                    <div class="mui-media-body">英语</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <a href="#">
+                    <i class="iconfont">&#xe610;</i>
+                    <div class="mui-media-body">生物</div>
+                </a>
+            </li>
+            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+                <a href="#">
+                    <i class="iconfont">&#xe608;</i>
+                    <div class="mui-media-body">经济</div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</ng-template>
+<ng-template #pc>
+
+    <nz-layout class="app-layout">
+        <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzTheme="dark" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+            <nz-header>
+                <div class="app-header">
+                    <span class="header-trigger" (click)="leftclose()">
+                                <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
+                            </span>
+                </div>
+            </nz-header>
+            <ul nz-menu nzMode="inline" nzTheme="dark" [nzInlineCollapsed]="isCollapsed">
+                <li nz-submenu nzOpen nzTitle="商务查询" nzIcon="dashboard">
+                    <ul>
+                        <li nz-menu-item nzMatchRouter>
+                            商业单位查询
+                        </li>
+                        <li nz-menu-item nzMatchRouter>
+                            <!-- <a routerLink="/home">home</a> -->
+                            促销预算查询
+                        </li>
+                        <li nz-menu-item nzMatchRouter>
+                            <!-- <a routerLink="/home ">home</a> -->
+                            单位备案查询
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nz-sider>
+        <nz-layout>
+            <nz-content [ngStyle]="{ 'width':width+ 'px'} "></nz-content>
+            <nz-footer>Footer</nz-footer>
+        </nz-layout>
+    </nz-layout>
+
+</ng-template>
