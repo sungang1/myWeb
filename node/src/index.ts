@@ -38,7 +38,7 @@ app.use(cookieParser());
 
 app.set('views', path.join(__dirname, 'views/Hello'));
 
-console.log( path.join(__dirname, 'views/Hello'));
+// console.log( path.join(__dirname, 'views/Hello'));
 app.engine('html', ejs.__express);
 app.set('view engine', 'html');
 app.use(logger('dev'));
@@ -51,7 +51,7 @@ app.use(express.urlencoded({ extended: false }));
 //这是判断是选择终端的
 app.use(express.static(path.join(__dirname, 'views/Hello')));
 
-console.log('w',path.join(__dirname, 'views/Hello'));
+// console.log('w',path.join(__dirname, 'views/Hello'));
 
 
 
