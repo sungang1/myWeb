@@ -1,0 +1,1 @@
+{"version":3,"file":"InitController.js","sourceRoot":"","sources":["../../../src/app/Init/InitController.ts"],"names":[],"mappings":";;AACA,MAAa,IAAI;IAAjB;QACC,SAAI,GAAC,CAAC,GAAoB,EAAE,GAAqB,EAAC,EAAE;YACjD,OAAO,CAAC,GAAG,CAAC,MAAM,CAAC,CAAC;YACpB,GAAG,CAAC,IAAI,CAAC,EAAC,OAAO,EAAC,IAAI,EAAC,CAAC,CAAA;QAE3B,CAAC,CAAA;IAEF,CAAC;CAAA;AAPD,oBAOC"}

@@ -1,0 +1,28 @@
+
+.center {
+    width: 370px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: rgb(211, 205, 205) 1px solid;
+    border-radius: 10px 10px;
+}
+
+.center:hover {
+    border: rgb(157, 182, 235) 1px solid;
+    box-shadow: rgb(195, 212, 250) 2px 2px 2px;
+}
+
+
+/* .center {
+    width: 28%;
+    margin: 0 auto;
+    border: #000 1px solid;
+} */
+
+.inputNum {
+    margin: 10px 0px;
+}
+
+.btn {
+    margin: 0 40%;
+}

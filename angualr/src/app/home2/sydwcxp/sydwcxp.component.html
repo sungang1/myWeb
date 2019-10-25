@@ -1,0 +1,19 @@
+<div>
+        <nz-table #basicTable [nzData]="listOfData">
+            <thead>
+                <tr>
+                    <th nzWidth="240px">单位编码</th>
+                    <th nzWidth="240px">单位名称</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of basicTable.data">
+                    <td>{{ data.SYDWBM }}</td>
+                    <td>{{ data.SYDWMC }}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </nz-table>  
+    </div>
+    

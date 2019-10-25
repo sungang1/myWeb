@@ -1,0 +1,43 @@
+<div class="center">
+        <nz-range-picker [nzFormat]="dateFormat" [(ngModel)]="dateRange"></nz-range-picker><br>
+        <input class="inputNum " nz-input placeholder="商业单位（编号）" [(ngModel)]="SYDWBH" />
+        <br>
+        <button nz-button (click)="query()" nzType="primary" class='btn'>查询</button>
+    </div>
+    
+    <div style="margin-top:30px" *ngIf="showTable">
+        <nz-table #myFile nzShowSizeChanger [nzBordered]='true' [nzLoading]='isLoading' [nzData]="MessageInfo">
+            <thead>
+                <tr>
+                    <!-- <th>Id</th> -->
+                    <th>商业单位</th>
+                    <th>活动开始日期</th>
+                    <th>活动结束日期</th>
+                    <th>医院</th>
+                    <th>产品</th>
+                    <th>数量</th>
+                    <th>赠品数量</th>
+                    <th>价格</th>
+                    <th>备注</th>
+                    <th> 业务员</th>
+                    <th>预算单号</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of myFile.data;let i = index">
+                    <!-- <td>{{i+1}}</td> -->
+                    <td>{{ data.SYDW }}</td>
+                    <td>{{ data.HDKSRQ }}</td>
+                    <td>{{ data.HDJSRQ }}</td>
+                    <td>{{ data.YY }}</td>
+                    <td>{{ data.CP }}</td>
+                    <td>{{ data.SL }}</td>
+                    <td>{{ data.ZPSL }}</td>
+                    <td>{{ data.JG }}</td>
+                    <td>{{ data.BZ }}</td>
+                    <td>{{ data.YWY }}</td>
+                    <td>{{ data.YSDH }}</td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </div>

@@ -1,0 +1,30 @@
+{
+  "id": "1255017",
+  "name": "oa-kefu",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6965045",
+      "name": "单位",
+      "font_class": "danwei",
+      "unicode": "e758",
+      "unicode_decimal": 59224
+    },
+    {
+      "icon_id": "8454939",
+      "name": "备案",
+      "font_class": "beian",
+      "unicode": "e771",
+      "unicode_decimal": 59249
+    },
+    {
+      "icon_id": "9774330",
+      "name": "预算",
+      "font_class": "yusuan",
+      "unicode": "e64b",
+      "unicode_decimal": 58955
+    }
+  ]
+}

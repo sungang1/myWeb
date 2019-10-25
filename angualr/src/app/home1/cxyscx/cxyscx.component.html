@@ -1,0 +1,60 @@
+<header class="mui-bar mui-bar-nav fixed">
+  <a class="mui-icon mui-icon-left-nav mui-pull-left" (click)="goto()"></a>
+  <span class="mui-title">促销预算查询</span>
+</header>
+<div class="mui-content">
+  <br>
+  <div class="mui-input-group">
+    <div (click)='makeDtpickerStart()' class="mui-input-row">
+      <label>开始日期</label>
+      <input type="text" [(ngModel)]="startDate" placeholder="选择开始日期">
+
+    </div>
+
+    <div (click)='makeDtpickerEnd()' class="mui-input-row">
+      <label>结束日期</label>
+      <input type="text" [(ngModel)]="endDate" placeholder="选择结束日期">
+
+    </div>
+    <div class="mui-input-row">
+      <label>商业单位编号</label>
+      <input type="text" [(ngModel)]="SYDWBH" placeholder="输入商业单位编号">
+
+    </div>
+
+    <div class="mui-button-row">
+      <button type="button" class="mui-btn mui-btn-primary" (click)="query()">确认</button>&nbsp;&nbsp;
+
+    </div>
+  </div>
+
+
+  <div  *ngIf="isLoading" class="mui-button-row">
+      加载中
+    </div>
+ 
+    <div  *ngIf="dataNull" class="mui-button-row">
+            无数据返回，请确定日期选择范围和商业单位编号
+    </div>
+    
+
+    <div class="mui-card" *ngFor="let data of  MessageInfo">
+            
+
+            <div class="mui-card-content" >
+                    <ul class="mui-table-view">
+                            <li class="mui-table-view-cell">商业单位 ：<span>{{ data.SYDW}}}</span></li>
+                            <li class="mui-table-view-cell">活动开始日期 ：<span >{{ data.HDKSRQ}}</span></li>     
+                            <li class="mui-table-view-cell">活动结束日期 ：<span>{{data.HDJSRQ}}}</span></li>
+                            <li class="mui-table-view-cell">医院：<span >{{ data.YY}}</span></li> 
+                            <li class="mui-table-view-cell">产品 ：<span>{{data.CP}}}</span></li>
+                            <li class="mui-table-view-cell">数量 ：<span >{{data.SL}}</span></li>     
+                            <li class="mui-table-view-cell">赠品数量 ：<span>{{data.ZPSL}}}</span></li>
+                            <li class="mui-table-view-cell">价格：<span >{{data.JG}}</span></li> 
+                            <li class="mui-table-view-cell">备注 ：<span >{{data.BZ}}</span></li>     
+                            <li class="mui-table-view-cell">业务员 ：<span>{{data.YWY}}}</span></li>
+                            <li class="mui-table-view-cell">预算单号：<span >{{data.YSDH}}</span></li>         
+                        </ul>
+            </div>
+    </div>
+</div>
