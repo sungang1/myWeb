@@ -29,7 +29,7 @@ app.use(cookieParser());
 // app.use('/html', express.static(path.join(__dirname, '../../html')));
 // app.use(express.static(path.join(__dirname, 'views/Hello')));
 app.set('views', path.join(__dirname, 'views/Hello'));
-console.log(path.join(__dirname, 'views/Hello'));
+// console.log( path.join(__dirname, 'views/Hello'));
 app.engine('html', ejs.__express);
 app.set('view engine', 'html');
 app.use(logger('dev'));
@@ -41,7 +41,7 @@ app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser('sessionuse'));
 //这是判断是选择终端的
 app.use(express.static(path.join(__dirname, 'views/Hello')));
-console.log('w', path.join(__dirname, 'views/Hello'));
+// console.log('w',path.join(__dirname, 'views/Hello'));
 //生产环境中去掉
 app.use(function (req, res, next) {
     console.log(req.url);
