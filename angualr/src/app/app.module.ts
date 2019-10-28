@@ -8,10 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HashLocationStrategy, LocationStrategy, registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+import { HomeModule } from './home/home.module';
+import { HomeComponent } from './home/home.component';
 registerLocaleData(zh);
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ registerLocaleData(zh);
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HomeModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN },{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]

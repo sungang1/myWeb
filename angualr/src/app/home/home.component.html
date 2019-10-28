@@ -3,7 +3,7 @@
     <div class="mui-content">
         <ul class="mui-table-view mui-grid-view mui-grid-9">
             <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                <a href="#">
+                <a [routerLink]="['/home/science/physics/quantum']">
                     <i class="iconfont">&#xe617;</i>
                     <div class="mui-media-body">音乐</div>
                 </a>
@@ -71,10 +71,23 @@
                 </div>
             </nz-header>
             <ul nz-menu nzMode="inline" nzTheme="dark" [nzInlineCollapsed]="isCollapsed">
-                <li nz-submenu nzOpen nzTitle="商务查询" nzIcon="dashboard">
+                <li nz-submenu nzOpen nzTitle="科学" nzIcon="dashboard">
                     <ul>
-                        <li nz-menu-item nzMatchRouter>
-                            测试
+                        <li nz-submenu nzOpen nzTitle="物理">
+                            <ul>
+                                <li [routerLink]="['/home/science/physics/quantum']" nz-menu-item nzMatchRouter>
+                                    <!-- <a routerLink="/home/science/physics/quantum ">我的测试数据</a> -->
+                                    我的测试数据
+                                </li>
+                                <li [routerLink]="['/home/science/physics/air']" nz-menu-item nzMatchRouter>
+                                    <!-- <a routerLink="/home ">home</a> -->
+                                    测试3
+                                </li>
+                                <li nz-menu-item nzMatchRouter>
+                                    <!-- <a routerLink="/home ">home</a> -->
+                                    测试3
+                                </li>
+                            </ul>
                         </li>
                         <li nz-menu-item nzMatchRouter>
                             <!-- <a routerLink="/home">home</a> -->
@@ -164,8 +177,12 @@
             </ul>
         </nz-sider>
         <nz-layout>
-            <nz-content [ngStyle]="{ 'width':width+ 'px'} "></nz-content>
-            <nz-footer>Footer</nz-footer>
+            <!-- <nz-content [ngStyle]="{ 'width':width+ 'px'} "> -->
+            <nz-content>
+                <router-outlet>
+                </router-outlet>
+            </nz-content>
+
         </nz-layout>
     </nz-layout>
 
