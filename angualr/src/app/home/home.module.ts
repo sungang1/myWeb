@@ -4,7 +4,7 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ScienceModule } from './science/science.module';
-
+ 
 
 @NgModule({
   declarations: [ ],
@@ -12,7 +12,8 @@ import { ScienceModule } from './science/science.module';
     CommonModule,
     HomeRoutingModule,
     NgZorroAntdModule,
-    ScienceModule
+    ScienceModule,
+ 
   ]
 })
 export class HomeModule { }

@@ -14,7 +14,8 @@ export class  InitRoutes {
         var controller = this._Controller;
   
         router.get('/test', controller.test);    // 遍历uesers表，获得部门
-       
+        router.post('/save', controller.Save); 
+        router.get('/output', controller.Output); 
         return router;
     }
 }

@@ -11,6 +11,9 @@ import zh from '@angular/common/locales/zh';
 import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
 registerLocaleData(zh);
+import { QuillModule } from 'ngx-quill'
+
+ 
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,8 @@ registerLocaleData(zh);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    HomeModule
+    HomeModule,
+    QuillModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN },{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]

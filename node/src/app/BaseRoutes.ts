@@ -5,7 +5,7 @@ import { InitRoutes} from './Init/InitRoutes';
 var app = express.Router();
 
  
-app.use('/test',new  InitRoutes().routes)
+app.use('/my',new  InitRoutes().routes)
 
 
 

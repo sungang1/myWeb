@@ -7,3 +7,15 @@
     <button (click)="delete()">删除数组</button><br>
     <button (click)="alertData()">打印数组</button><br>
 </div>
+
+<!-- <quill-editor [(ngModel)]="content" placeholder='请输入文本进行展示' [styles]="{height: '250px'}"> </quill-editor> -->
+
+<quill-editor (onEditorCreated)="some($event)" [styles]="{height: '300px'}" [ngModel]="content" placeholder="请输入公告内容" (onContentChanged)="contentChanged($event)">
+
+</quill-editor>
+
+
+<button (click)="richText() ">打印出富文本内容</button>
+
+
+<button (click)="getText() ">打印出富文本内容</button>
