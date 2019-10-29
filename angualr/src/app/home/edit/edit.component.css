@@ -1,0 +1,33 @@
+.out {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.box {
+    width: 300px;
+    border: 1px solid black;
+    height: 600px;
+    overflow: scroll;
+}
+
+.box::-webkit-scrollbar {
+    display: none;
+}
+
+.line {
+    height: 40px;
+    border: 1px solid;
+    background-color: antiquewhite;
+    margin: 10px;
+    font-size: 20px;
+    border-color: black;
+    border-radius: 5px;
+}
+
+.line:hover {
+    border-color: blue;
+    box-shadow: 1px 1px 1px gray;
+    cursor: pointer;
+}

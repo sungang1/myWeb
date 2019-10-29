@@ -1,4 +1,4 @@
-<ng-container *ngIf="isPhone; then phone; else  pc"></ng-container>
+<ng-container *ngIf="isPhone; then phone; else pc"></ng-container>
 <ng-template #phone>
     <div class="mui-content">
         <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -60,17 +60,35 @@
     </div>
 </ng-template>
 <ng-template #pc>
-
     <nz-layout class="app-layout">
         <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzTheme="dark" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
             <nz-header>
                 <div class="app-header">
                     <span class="header-trigger" (click)="leftclose()">
-                                <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
-                            </span>
+            <i
+              class="trigger"
+              nz-icon
+              [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></i>
+          </span>
                 </div>
             </nz-header>
             <ul nz-menu nzMode="inline" nzTheme="dark" [nzInlineCollapsed]="isCollapsed">
+                <li nz-submenu nzOpen nzTitle="其他查询" nzIcon="dashboard">
+                    <ul>
+                        <li [routerLink]="['/home/edit']" nz-menu-item nzMatchRouter>
+                            编辑文档
+                        </li>
+                        <li nz-menu-item nzMatchRouter>
+                            <!-- <a routerLink="/home">home</a> -->
+                            测试第二
+                        </li>
+                        <li nz-menu-item nzMatchRouter>
+                            <!-- <a routerLink="/home ">home</a> -->
+                            测试dier
+                        </li>
+                    </ul>
+                </li>
                 <li nz-submenu nzOpen nzTitle="科学" nzIcon="dashboard">
                     <ul>
                         <li nz-submenu nzOpen nzTitle="物理">
@@ -179,11 +197,8 @@
         <nz-layout>
             <!-- <nz-content [ngStyle]="{ 'width':width+ 'px'} "> -->
             <nz-content>
-                <router-outlet>
-                </router-outlet>
+                <router-outlet> </router-outlet>
             </nz-content>
-
         </nz-layout>
     </nz-layout>
-
 </ng-template>
