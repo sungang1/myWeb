@@ -1,14 +1,47 @@
 <div class="out">
     <div class="box">
-        <div *ngFor="let item of test" class="line">
-            <span style="display: inline-block;width: 48%;">{{item}}</span>
-            <span style="display: inline-block;width: 48%;">{{item}}</span>
+        <div *ngFor="let item of getAClass" class="line" (click)="selectAClass($event)">
+            <span style="display: inline-block;width: 48%;">{{ item.A_id }}</span>
+            <span style="display: inline-block;width: 48%;">{{ item.A_name }}</span>
         </div>
-
-
-
     </div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <div class="box">
+        <div *ngFor="let item of getBClass" class="line" (click)="selectBClass($event)">
+            <span style="display: inline-block;width: 48%;">{{ item.B_id }}</span>
+            <span style="display: inline-block;width: 48%;">{{ item.B_name }}</span>
+        </div>
+    </div>
+    <div class="box">
+        <div *ngFor="let item of getCClass" class="line" (click)="selectCClass($event)">
+            <span style="display: inline-block;width: 48%;">{{ item.C_id }}</span>
+            <span style="display: inline-block;width: 48%;">{{ item.C_name }}</span>
+        </div>
+    </div>
+    <div class="box">
+        <div *ngFor="let item of getTitle" class="line">
+            <span style="display: inline-block;width: 48%;">{{ item.Title_id }}</span>
+            <span style="display: inline-block;width: 48%;">{{ item.title }}</span>
+        </div>
+    </div>
+</div>
+
+<hr />
+<hr />
+<div class="out">
+    <div>
+        <div>
+            <span>一级标题</span><span>{{ selectA }}</span
+      ><button>删除</button> <button>修改</button>
+    </div>
+    <div>
+      <span>二级标题</span><span>{{ selectB }}</span>
+            <button>删除</button> <button>修改</button>
+        </div>
+        <div>
+            <span>三级标题</span><span>{{ selectC }}</span>
+            <button>删除</button> <button>修改</button>
+        </div>
+        <div><span>标题</span><span> </span>
+            <button>删除</button> <button>修改</button></div>
+    </div>
 </div>

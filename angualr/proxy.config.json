@@ -1,5 +1,5 @@
 {
-    "/my": {
+    "/class": {
         "target": "http://localhost:3000"
     }
 }
