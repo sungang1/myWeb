@@ -33,6 +33,7 @@ export class EditComponent implements OnInit {
       this.selectA = some.target.parentElement.children[0].innerHTML;
     } else if (some.target.nodeName == 'DIV') {
       this.selectA = some.target.children[0].innerHTML;
+      
     }
     this.http.post('/class/getclass', { type: 'B', refA: this.selectA }).subscribe((data: any) => {
       if (data.error != '') {
