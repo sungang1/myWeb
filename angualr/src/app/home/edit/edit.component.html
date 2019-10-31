@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="box">
-        <div *ngFor="let item of getTitle" class="line">
+        <div *ngFor="let item of getTitle" class="line" (click)="selectT($event)">
             <span style="display: inline-block;width: 48%;">{{ item.Title_id }}</span>
             <span style="display: inline-block;width: 48%;">{{ item.title }}</span>
         </div>
@@ -29,19 +29,21 @@
 <hr />
 <div class="out">
     <div>
-        <div>
-            <span>一级标题</span><span>{{ selectA }}</span
-      ><button>删除</button> <button>修改</button>
+
+        <div><input nz-input [(ngModel)]="obj.AName" placeholder="输入A类名称"><input nz-input [(ngModel)]="obj.AId" placeholder="输入A类Id"></div>
+        <div><input nz-input [(ngModel)]="obj.BName" placeholder="输入B类名称"><input nz-input [(ngModel)]="obj.BId" placeholder="输入B类Id"></div>
+        <div><input nz-input [(ngModel)]="obj.CName" placeholder="输入C类名称"><input nz-input [(ngModel)]="obj.CId" placeholder="输入C类Id"></div>
+        <div><input nz-input [(ngModel)]="obj.TName" placeholder="输入标题名称"><input nz-input [(ngModel)]="obj.TId" placeholder="输入标题Id"></div>
     </div>
     <div>
-      <span>二级标题</span><span>{{ selectB }}</span>
-            <button>删除</button> <button>修改</button>
-        </div>
-        <div>
-            <span>三级标题</span><span>{{ selectC }}</span>
-            <button>删除</button> <button>修改</button>
-        </div>
-        <div><span>标题</span><span> </span>
-            <button>删除</button> <button>修改</button></div>
+        <button nz-button nzType="primary">添加</button>
+        <button nz-button nzType="primary">修改</button>
+        <button nz-button nzType="primary">删除</button>
+        <nz-radio-group [(ngModel)]="radioValue">
+            <label nz-radio nzValue="A">A类</label>
+            <label nz-radio nzValue="B">B类</label>
+            <label nz-radio nzValue="C">C类</label>
+            <label nz-radio nzValue="D">题目</label>
+        </nz-radio-group>
     </div>
 </div>
