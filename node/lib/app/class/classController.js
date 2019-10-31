@@ -45,6 +45,36 @@ class classController {
                 }
             });
         };
+        this.add = (req, res) => {
+            let sql = '';
+            switch (req.body.type) {
+                case 'A':
+                    sql = `INSERT INTO  A_class( A_name, A_id, KeyId ) VALUES ( '${req.body.AName}', '${req.body.AId}','${req.body.AId}');`;
+                    break;
+                case 'B':
+                    sql = `INSERT INTO  A_class( A_name, A_id,B_name,B_id,KeyId ) VALUES ( '${req.body.AName}', '${req.body.AId}','${req.body.BName}', '${req.body.BId}','${req.body.AId}${req.body.BId}');`;
+                    break;
+                case 'C':
+                    sql = `INSERT INTO  A_class( A_name, A_id, B_name, B_id, C_name, C_id, KeyId ) VALUES 
+                    ( '${req.body.AName}', '${req.body.AId}','${req.body.BName}', '${req.body.BId}','${req.body.CName}', '${req.body.CId}','${req.body.AId}${req.body.BId}${req.body.CId}');`;
+                    break;
+                case 'D':
+                    sql = `INSERT INTO  A_class( A_name, A_id, B_name, B_id, C_name, C_id, Title_id, title, KeyId ) VALUES 
+                    ( '${req.body.AName}', '${req.body.AId}','${req.body.BName}', '${req.body.BId}',
+                    '${req.body.CName}', '${req.body.CId}','${req.body.TId}','${req.body.TName}',  '${req.body.AId}${req.body.BId}${req.body.CId}${req.body.TId}');`;
+                    break;
+                default:
+                    break;
+            }
+            mysql_1.query(sql, (err, val, field) => {
+                if (err) {
+                    res.json({ error: err });
+                }
+                else {
+                    res.json({ error: '' });
+                }
+            });
+        };
     }
 }
 exports.classController = classController;

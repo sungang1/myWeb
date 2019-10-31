@@ -15,7 +15,7 @@ export class   classRoutes {
   
         router.post('/getclass', controller.getClass);     
         router.post('/setclass', controller.setClass); 
-       
+        router.post('/add', controller.add); 
         return router;
     }
 }
