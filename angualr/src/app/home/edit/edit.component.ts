@@ -22,11 +22,12 @@ export class EditComponent implements OnInit {
     CName: '',
     CId: '',
     TName: '',
-    TId: ''
+    TId: '',
+    type: 'M'
   }
 
   radioValue = 'A';// 默认添加A类
-
+  methodType = 'M'; // 类型
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -131,8 +132,9 @@ export class EditComponent implements OnInit {
   }
 
 
-  add() {
+  submit() {
     let sendObj = {};
+    let url = '';
     switch (this.radioValue) {
       case 'A':
         if (this.obj.AName == '' || this.obj.AId == '') {
@@ -211,8 +213,27 @@ export class EditComponent implements OnInit {
       default:
         break;
     }
-    this.http.post('/class/add', sendObj).subscribe((data: any) => {
-      console.log(data);
+
+    switch (this.obj.type) {
+      case 'M':
+        url = '/class/add';
+        break;
+      case 'N':
+        url = '/class/modify';
+        break;
+      case 'G':
+        url = '/class/delete';
+        break;
+      default:
+        break;
+    }
+
+    this.http.post(url, sendObj).subscribe((data: any) => {
+      if (data.error !== '') {
+        alert('错误信息：' + data.error);
+      } else {
+        alert('操作成功');
+      }
     })
 
 
@@ -222,51 +243,7 @@ export class EditComponent implements OnInit {
 
 
 
-  modify() {
 
-    switch (this.radioValue) {
-      case 'A':
-
-        break;
-      case 'B':
-
-        break;
-      case 'C':
-
-        break;
-      case 'D':
-
-        break;
-      default:
-        break;
-    }
-
-
-
-  }
-
-  delete() {
-
-    switch (this.radioValue) {
-      case 'A':
-
-        break;
-      case 'B':
-
-        break;
-      case 'C':
-
-        break;
-      case 'D':
-
-        break;
-      default:
-        break;
-    }
-
-
-
-  }
 
 
 

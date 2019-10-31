@@ -12,6 +12,13 @@
     overflow: scroll;
 }
 
+.box2{
+    width: 300px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+
 .box::-webkit-scrollbar {
     display: none;
 }
@@ -30,4 +37,12 @@
     border-color: blue;
     box-shadow: 1px 1px 1px gray;
     cursor: pointer;
+}
+
+
+.inputInline span{
+    display: inline ;
+}
+.inputInline input{
+    display: inline ;
 }
