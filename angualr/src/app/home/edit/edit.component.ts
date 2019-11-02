@@ -23,7 +23,11 @@ export class EditComponent implements OnInit {
     CId: '',
     TName: '',
     TId: '',
-    type: 'M'
+    type: 'M',
+    disA: false,
+    disB: false,
+    disC: false,
+    disT: false
   }
 
   radioValue = 'A';// 默认添加A类
@@ -34,7 +38,13 @@ export class EditComponent implements OnInit {
 
     this.http.post('/class/getclass', { type: 'A' }).subscribe((data: any) => {
       this.getAClass = data.data;
+      console.log(data);
     });
+
+    this.obj.disA = false;
+    this.obj.disB = true;
+    this.obj.disC = true;
+    this.obj.disT = true;
 
   }
   selectAClass(some: any) {
@@ -230,19 +240,90 @@ export class EditComponent implements OnInit {
 
     this.http.post(url, sendObj).subscribe((data: any) => {
       if (data.error !== '') {
-        alert('错误信息：' + data.error);
+        alert('错误信息：' + data.error.error);
       } else {
         alert('操作成功');
+        this.test();
       }
     })
+  }
 
-
+  test() {
+    switch (this.radioValue) {
+      case 'A':
+        this.http.post('/class/getclass', { type: 'A' }).subscribe((data: any) => {
+          this.getAClass = data.data;
+        });
+        break;
+      case 'B':
+        this.http.post('/class/getclass', { type: 'B', refA: this.selectA }).subscribe((data: any) => {
+          if (data.error != '') {
+            alert(data.error);
+          } else {
+            this.getBClass = data.data;
+          }
+        });
+        break;
+      case 'C':
+        this.http.post('/class/getclass', { type: 'D', refA: this.selectA, refB: this.selectB, refC: this.selectC }).subscribe((data: any) => {
+          if (data.error != '') {
+            alert('后端错误');
+          } else {
+            this.getTitle = data.data;
+          }
+        });
+        break;
+      case 'D':
+        break;
+      default:
+        break;
+    }
   }
 
 
+  changeInput(some: any) {
+    console.log(some);
+    // console.log(this.radioValue);
+    if (some == 'A') {
+      this.obj.BId = '';
+      this.obj.BName = '';
+      this.obj.CId = '';
+      this.obj.CName = '';
+      this.obj.TId = '';
+      this.obj.TName = '';
+      this.obj.disA = false;
+      this.obj.disB = true;
+      this.obj.disC = true;
+      this.obj.disT = true;
+    }
+    if (some == 'B') {
+      this.obj.CId = '';
+      this.obj.CName = '';
+      this.obj.TId = '';
+      this.obj.TName = '';
+      this.obj.disA = true;
+      this.obj.disB = false;
+      this.obj.disC = true;
+      this.obj.disT = true;
+    }
+    if (some == 'C') {
+      this.obj.TId = '';
+      this.obj.TName = '';
+      this.obj.disB = true;
+      this.obj.disC = false;
+      this.obj.disA = true;
+      this.obj.disT = true;
+    }
+    if (some == 'D') {
+      this.obj.disB = true;
+      this.obj.disC = true;
+      this.obj.disA = true;
+      this.obj.disT = false;
+    }
 
 
 
+  }
 
 
 

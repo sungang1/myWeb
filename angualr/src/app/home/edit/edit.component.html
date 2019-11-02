@@ -28,60 +28,59 @@
 <hr />
 <hr />
 <div class="out">
-     
-            <nz-form-item class="box2">
-                    <nz-form-label [nzSm]="6" [nzXs]="24"    >A类名称</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" >
-                      <input nz-input    [(ngModel)]="obj.AName"   />
-                    </nz-form-control>
-                    <nz-form-label [nzSm]="6" [nzXs]="24"    >A类ID</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" >
-                      <input nz-input    [(ngModel)]="obj.AId"   />
-                    </nz-form-control>
-            </nz-form-item>
-            <nz-form-item class="box2"  >
-                    <nz-form-label [nzSm]="6" [nzXs]="24"    >B类名称</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" >
-                      <input nz-input    [(ngModel)]="obj.BName"   />
-                    </nz-form-control>
-                    <nz-form-label [nzSm]="6" [nzXs]="24"    >B类ID</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" >
-                      <input nz-input    [(ngModel)]="obj.BId"   />
-                    </nz-form-control>
-            </nz-form-item>
-            <nz-form-item class="box2" >
-                    <nz-form-label [nzSm]="6" [nzXs]="24"    >C类名称</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" >
-                      <input nz-input    [(ngModel)]="obj.CName"   />
-                    </nz-form-control>
-                    <nz-form-label [nzSm]="6" [nzXs]="24"    >C类ID</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" >
-                      <input nz-input    [(ngModel)]="obj.CId"   />
-                    </nz-form-control>
-            </nz-form-item>
-            <nz-form-item  class="box2">
-                    <nz-form-label [nzSm]="6" [nzXs]="24"    >题目名称</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" >
-                      <input nz-input    [(ngModel)]="obj.TName"   />
-                    </nz-form-control>
-                    <nz-form-label [nzSm]="6" [nzXs]="24"    >题目ID</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" >
-                      <input nz-input    [(ngModel)]="obj.TId"   />
-                    </nz-form-control>
-            </nz-form-item>
-    
-    <div class="box2">
-        <nz-radio-group [(ngModel)]="obj.type">
-            <label nz-radio nzValue="M">添加</label>
-            <label nz-radio nzValue="N">修改</label>
-            <label nz-radio nzValue="G">删除</label>
-        </nz-radio-group>
-        <nz-radio-group [(ngModel)]="radioValue">
-            <label nz-radio nzValue="A">A类</label>
-            <label nz-radio nzValue="B">B类</label>
-            <label nz-radio nzValue="C">C类</label>
-            <label nz-radio nzValue="D">题目</label>
-        </nz-radio-group>
-        <button (click)='submit()'>提交</button>
-    </div>
+
+    <nz-form-item class="box2">
+        <nz-form-label [nzSm]="6" [nzXs]="24">A类名称</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [disabled]='obj.disA' [(ngModel)]="obj.AName" />
+        </nz-form-control>
+        <nz-form-label [nzSm]="6" [nzXs]="24">A类ID</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [disabled]='obj.disA' [(ngModel)]="obj.AId" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item class="box2">
+        <nz-form-label [nzSm]="6" [nzXs]="24">B类名称</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [disabled]='obj.disB' [(ngModel)]="obj.BName" />
+        </nz-form-control>
+        <nz-form-label [nzSm]="6" [nzXs]="24">B类ID</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [disabled]='obj.disB' [(ngModel)]="obj.BId" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item class="box2">
+        <nz-form-label [nzSm]="6" [nzXs]="24">C类名称</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [disabled]='obj.disC' [(ngModel)]="obj.CName" />
+        </nz-form-control>
+        <nz-form-label [nzSm]="6" [nzXs]="24">C类ID</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [disabled]='obj.disC' [(ngModel)]="obj.CId" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item class="box2">
+        <nz-form-label [nzSm]="6" [nzXs]="24">题目名称</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [disabled]='obj.disT' [(ngModel)]="obj.TName" />
+        </nz-form-control>
+        <nz-form-label [nzSm]="6" [nzXs]="24">题目ID</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+            <input nz-input [disabled]='obj.disT' [(ngModel)]="obj.TId" />
+        </nz-form-control>
+    </nz-form-item>
+</div>
+<div style="width: 400px;border: 1px solid black;margin: 0 auto;">
+    <nz-radio-group [(ngModel)]="obj.type">
+        <label nz-radio nzValue="M">添加</label>
+        <label nz-radio nzValue="N">修改</label>
+        <label nz-radio nzValue="G">删除</label>
+    </nz-radio-group>
+    <nz-radio-group (ngModelChange)='changeInput($event)' [(ngModel)]="radioValue">
+        <label nz-radio nzValue="A">A类</label>
+        <label nz-radio nzValue="B">B类</label>
+        <label nz-radio nzValue="C">C类</label>
+        <label nz-radio nzValue="D">题目</label>
+    </nz-radio-group>
+    <button (click)='submit()'>提交</button>
 </div>

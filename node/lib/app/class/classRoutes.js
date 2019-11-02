@@ -13,6 +13,7 @@ class classRoutes {
         router.post('/setclass', controller.setClass);
         router.post('/add', controller.add);
         router.post('/modify', controller.modify);
+        router.post('/delete', controller.Delete);
         return router;
     }
 }

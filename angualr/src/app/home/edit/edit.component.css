@@ -2,7 +2,7 @@
     display: flex;
     width: 100%;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .box {
@@ -12,12 +12,11 @@
     overflow: scroll;
 }
 
-.box2{
+.box2 {
     width: 300px;
     border: 1px solid black;
     margin: 10px;
 }
-
 
 .box::-webkit-scrollbar {
     display: none;
@@ -39,10 +38,10 @@
     cursor: pointer;
 }
 
-
-.inputInline span{
-    display: inline ;
+.inputInline span {
+    display: inline;
 }
-.inputInline input{
-    display: inline ;
+
+.inputInline input {
+    display: inline;
 }
