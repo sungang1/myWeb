@@ -13,7 +13,7 @@ export class EditComponent implements OnInit {
   selectA = '';
   selectB = '';
   selectC = '';
-
+  selectTitle = '';
   obj = {
     AName: '',
     AId: '',
@@ -133,9 +133,11 @@ export class EditComponent implements OnInit {
     this.obj.TId = '';
     this.obj.TName = '';
     if (some.target.nodeName == 'SPAN') {
+      this.selectTitle=some.target.parentElement.children[0].innerHTML;
       this.obj.TId = some.target.parentElement.children[0].innerHTML;
       this.obj.TName = some.target.parentElement.children[1].innerHTML;
     } else if (some.target.nodeName == 'DIV') {
+      this.selectTitle=some.target.children[0].innerHTML;
       this.obj.TId = some.target.children[0].innerHTML;
       this.obj.TName = some.target.children[1].innerHTML;
     }
@@ -143,7 +145,7 @@ export class EditComponent implements OnInit {
 
 
   submit() {
-    let sendObj = {};
+    let sendObj: any  ;
     let url = '';
     switch (this.radioValue) {
       case 'A':
@@ -230,6 +232,18 @@ export class EditComponent implements OnInit {
         break;
       case 'N':
         url = '/class/modify';
+        if(sendObj.type=='A'){
+          sendObj.nochangeA= this.selectA;
+        }
+        if(sendObj.type=='B'){
+          sendObj.nochangeB= this.selectB;
+        }
+        if(sendObj.type=='C'){
+          sendObj.nochangeC= this.selectC;
+        }
+        if(sendObj.type=='C'){
+          sendObj.nochangeT= this.selectTitle;
+        }
         break;
       case 'G':
         url = '/class/delete';

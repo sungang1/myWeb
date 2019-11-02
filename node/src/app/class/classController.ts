@@ -84,7 +84,7 @@ export class classController {
         let sql = '';
         switch (req.body.type) {
             case 'A':
-                sql = `UPDATE A_class set A_id='${req.body.AId}',A_name='${req.body.AName}' where KeyId like '%${req.body.AId}%'`;
+                sql = `UPDATE A_class set A_id='${req.body.nochageA}',A_name='${req.body.AName}' where KeyId like '%${req.body.AId}%'`;
                 break;
             case 'B':
                 sql = `UPDATE A_class set B_id='${req.body.BId}',B_name='${req.body.BName}' where  KeyId like '%${req.body.AId}${req.body.BId}%'`;
