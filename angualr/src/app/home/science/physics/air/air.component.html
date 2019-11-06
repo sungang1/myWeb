@@ -9,8 +9,9 @@
 <div>
     <button id="test">这是我的subject测试文件</button>
 </div> -->
-
+<!-- 
 <button (click)="getText() ">打印出富文本内容</button>
-<div id='test'>
+<div id='test'> -->
 
-</div>
+<!-- </div> -->
+<app-date-picker-pc (DateStart)="picker($event)" (DateEnd)="picker($event)" [dateFormat]="'yyyy/MM/dd'"></app-date-picker-pc>

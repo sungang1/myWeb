@@ -5,12 +5,17 @@ import { PhysicsRoutingModule } from './physics-routing.module';
 import { QuantumComponent } from './quantum/quantum.component';
 import { AirComponent } from './air/air.component';
 import { QuillModule } from 'ngx-quill';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgZorroAntdModule} from 'ng-zorro-antd';
+import { DatePickerPcComponent } from 'src/app/common/date-picker-pc.component';
 @NgModule({
-  declarations: [QuantumComponent, AirComponent],
+  declarations: [QuantumComponent, AirComponent, DatePickerPcComponent],
   imports: [
     CommonModule,
     PhysicsRoutingModule,
+    NgZorroAntdModule,
+    FormsModule,
+    ReactiveFormsModule,
     QuillModule.forRoot({
       // modules: {
       //   syntax: true,

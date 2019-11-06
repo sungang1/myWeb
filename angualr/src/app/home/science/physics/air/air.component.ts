@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./air.component.css']
 })
 export class AirComponent implements OnInit {
-  htmlDom=''; // 存储html
+  htmlDom = ''; // 存储html
+  format = 'yyyy/MM/dd';
 
-
-
+ 
   subject = new Subject<any>();
 
 
@@ -103,10 +103,12 @@ export class AirComponent implements OnInit {
 
   addHtml() {
     let test = document.getElementById('test');
-    test.innerHTML=this.htmlDom;
+    test.innerHTML = this.htmlDom;
   }
 
 
-
+  picker(some) {
+    console.log(some);
+  }
 
 }

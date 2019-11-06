@@ -137,7 +137,9 @@ export class classController {
     }
 
 
-
+    App = (req: express.Request, res: express.Response) => {
+        res.json({ data: '这是我的测试文件' });
+    }
 
 
 }

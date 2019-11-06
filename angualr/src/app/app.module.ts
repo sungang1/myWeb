@@ -11,13 +11,15 @@ import zh from '@angular/common/locales/zh';
 import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
 registerLocaleData(zh);
-import { QuillModule } from 'ngx-quill'
+import { QuillModule } from 'ngx-quill';
+ 
 
  
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    // DatepickerComponent
   ],
   imports: [
     BrowserModule,
