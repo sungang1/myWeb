@@ -14,6 +14,7 @@ class classRoutes {
         router.post('/add', controller.add);
         router.post('/modify', controller.modify);
         router.post('/delete', controller.Delete);
+        router.get('/app', controller.App); // 用于测试app请求参数
         return router;
     }
 }
